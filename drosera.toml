@@ -1,0 +1,15 @@
+seed_node = "0.0.0.0:30304"
+ethereum_rpc = "" # Add in Ethereum RPC here
+drosera_address = "0xcB82FbD0eDbb6facC46fFa50b39311d4C374c9F6" # Polygon Drosera Address
+drosera_rpc = "http://localhost:30303"
+
+[traps]
+
+[traps.test_trap]
+path = "out/StopLossTrap.sol/StopLossTrap.json"
+response_contract = "0x" # Add in StopLossController address here
+response_function = "updateTrade(uint8[],uint256[],address[])"
+cooldown_period_blocks = 32
+block_sample_size = 10
+private_trap = true
+whitelist = [] # Add in operator addresses here
