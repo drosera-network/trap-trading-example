@@ -29,6 +29,16 @@ jobs:
         run: |
           forge --version
 
+      - name: Install Bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          export PATH="$HOME/.bun/bin:$PATH"
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
+      - name: Install Bun dependencies
+        run: |
+          bun install
+
       - name: Run Forge fmt
         run: |
           forge fmt --check
